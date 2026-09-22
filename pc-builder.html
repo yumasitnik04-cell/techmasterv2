@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Сборка ПК — TechMaster</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container header__inner">
+      <a href="index.html" class="logo">⚡ TechMaster</a>
+      <nav class="nav">
+        <a href="catalog.html">Каталог</a>
+        <a href="pc-builder.html">Сборка ПК</a>
+        <a href="compare.html">Сравнение</a>
+      </nav>
+      <div class="search">
+        <input type="text" id="searchInput" placeholder="Поиск...">
+      </div>
+      <div class="header__actions">
+        <a href="login.html" class="icon-btn">👤</a>
+        <a href="cart.html" class="icon-btn">🛒 <span class="cart-count" id="cartCount">0</span></a>
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+    <h1 style="padding:30px 0 10px; font-size:32px;">🛠️ Сборка ПК</h1>
+    <p style="color:#6b7280; margin-bottom:20px;">Выберите комплектующие. Система проверит совместимость автоматически.</p>
+
+    <div class="builder-layout">
+      <div class="builder-steps" id="builderSteps"></div>
+
+      <aside class="builder-summary">
+        <h3>Итого</h3>
+        <div id="summaryList"></div>
+        <div class="builder-summary__total">
+          <span>Стоимость:</span>
+          <span id="totalPrice">0 ₽</span>
+        </div>
+        <div id="compatMsg"></div>
+        <button class="btn btn--primary" id="addBuildToCart" style="width:100%; margin-top:15px;">
+          Добавить всю сборку в корзину
+        </button>
+        <button class="btn btn--outline" id="clearBuild" style="width:100%; margin-top:8px;">
+          Очистить сборку
+        </button>
+      </aside>
+    </div>
+  </div>
+
+  <!-- Модальное окно выбора комплектующего -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal">
+      <div class="modal__header">
+        <h3 id="modalTitle">Выберите товар</h3>
+        <button class="modal__close" onclick="closeModal()">×</button>
+      </div>
+      <div class="modal__body" id="modalBody"></div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container footer__bottom">© 2025 TechMaster</div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/builder.js"></script>
+</body>
+</html>

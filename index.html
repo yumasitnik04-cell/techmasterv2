@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TechMaster — магазин электроники</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container header__inner">
+      <a href="index.html" class="logo">⚡ TechMaster</a>
+      <nav class="nav">
+        <a href="catalog.html">Каталог</a>
+        <a href="pc-builder.html">Сборка ПК</a>
+        <a href="compare.html">Сравнение</a>
+      </nav>
+      <div class="search">
+        <input type="text" id="searchInput" placeholder="Поиск товаров...">
+      </div>
+      <div class="header__actions">
+        <a href="login.html" class="icon-btn" title="Войти">👤</a>
+        <a href="cart.html" class="icon-btn" title="Корзина">
+          🛒 <span class="cart-count" id="cartCount">0</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <h1>Техника, которая работает на вас</h1>
+      <p>Более 150 позиций: комплектующие для ПК, смартфоны, ноутбуки и многое другое</p>
+      <a href="catalog.html" class="btn btn--primary">Перейти в каталог</a>
+      <a href="pc-builder.html" class="btn btn--outline" style="margin-left:10px;">Собрать ПК</a>
+    </div>
+  </section>
+
+  <section class="container section">
+    <h2>Категории</h2>
+    <p class="section__subtitle">Выберите нужный раздел</p>
+    <div class="categories" id="categoriesGrid"></div>
+  </section>
+
+  <section class="container section">
+    <h2>Популярные товары</h2>
+    <p class="section__subtitle">Хиты продаж этого месяца</p>
+    <div class="products" id="popularProducts"></div>
+  </section>
+
+  <section class="container section">
+    <h2>Новинки</h2>
+    <p class="section__subtitle">Свежие поступления</p>
+    <div class="products" id="newProducts"></div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <div>
+          <h4>⚡ TechMaster</h4>
+          <p style="font-size:14px;">Магазин электроники и комплектующих</p>
+        </div>
+        <div>
+          <h4>Каталог</h4>
+          <a href="catalog.html?cat=cpu">Процессоры</a>
+          <a href="catalog.html?cat=gpu">Видеокарты</a>
+          <a href="catalog.html?cat=smartphone">Смартфоны</a>
+          <a href="catalog.html?cat=laptop">Ноутбуки</a>
+        </div>
+        <div>
+          <h4>Сервисы</h4>
+          <a href="pc-builder.html">Сборка ПК</a>
+          <a href="compare.html">Сравнение</a>
+          <a href="cart.html">Корзина</a>
+        </div>
+        <div>
+          <h4>Контакты</h4>
+          <p style="font-size:14px;">8 (800) 000-00-00</p>
+          <p style="font-size:14px;">info@techmaster.ru</p>
+        </div>
+      </div>
+      <div class="footer__bottom">© 2025 TechMaster. Курсовой проект.</div>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

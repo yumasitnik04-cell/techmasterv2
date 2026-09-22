@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Каталог — TechMaster</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container header__inner">
+      <a href="index.html" class="logo">⚡ TechMaster</a>
+      <nav class="nav">
+        <a href="catalog.html">Каталог</a>
+        <a href="pc-builder.html">Сборка ПК</a>
+        <a href="compare.html">Сравнение</a>
+      </nav>
+      <div class="search">
+        <input type="text" id="searchInput" placeholder="Поиск...">
+      </div>
+      <div class="header__actions">
+        <a href="login.html" class="icon-btn">👤</a>
+        <a href="cart.html" class="icon-btn">🛒 <span class="cart-count" id="cartCount">0</span></a>
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="catalog-layout">
+      <aside class="filters">
+        <h3>Фильтры</h3>
+        <div class="filter-group">
+          <strong>Категория</strong>
+          <div id="catFilters"></div>
+        </div>
+        <div class="filter-group">
+          <strong>Цена, ₽</strong>
+          <div style="display:flex; gap:6px;">
+            <input type="number" id="minPrice" placeholder="от">
+            <input type="number" id="maxPrice" placeholder="до">
+          </div>
+        </div>
+        <div class="filter-group">
+          <strong>Бренд</strong>
+          <div id="brandFilters" style="max-height: 200px; overflow-y:auto;"></div>
+        </div>
+        <div class="filter-actions">
+          <button class="btn btn--primary" id="applyBtn">Применить</button>
+          <button class="btn btn--outline" id="resetBtn">Сбросить</button>
+        </div>
+      </aside>
+
+      <main>
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px; gap:15px; flex-wrap:wrap;">
+          <h2 id="catalogTitle">Каталог</h2>
+          <select id="sortSelect" style="padding:10px; border-radius:8px; border:1px solid #d8dfe8; font-size:14px;">
+            <option value="default">По умолчанию</option>
+            <option value="price-asc">Цена ↑</option>
+            <option value="price-desc">Цена ↓</option>
+            <option value="name">По названию</option>
+          </select>
+        </div>
+        <div class="products" id="catalogProducts"></div>
+        <p id="emptyMsg" style="display:none; text-align:center; padding:60px; color:#9aa3b3; font-size:17px;">
+          Товары не найдены. Попробуйте изменить фильтры.
+        </p>
+      </main>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container footer__bottom">© 2025 TechMaster</div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/catalog.js"></script>
+</body>
+</html>

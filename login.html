@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Вход — TechMaster</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container header__inner">
+      <a href="index.html" class="logo">⚡ TechMaster</a>
+      <nav class="nav">
+        <a href="catalog.html">Каталог</a>
+        <a href="pc-builder.html">Сборка ПК</a>
+        <a href="compare.html">Сравнение</a>
+      </nav>
+      <div class="search">
+        <input type="text" id="searchInput" placeholder="Поиск...">
+      </div>
+      <div class="header__actions">
+        <a href="login.html" class="icon-btn">👤</a>
+        <a href="cart.html" class="icon-btn">🛒 <span class="cart-count" id="cartCount">0</span></a>
+      </div>
+    </div>
+  </header>
+
+  <div class="form-card" id="formCard">
+    <h2>Вход в личный кабинет</h2>
+    <input type="email" id="email" placeholder="E-mail">
+    <input type="password" id="password" placeholder="Пароль">
+    <button class="btn btn--primary" onclick="login()">Войти</button>
+    <a href="#" class="form-card__link" onclick="toggleRegister(event)">Нет аккаунта? Зарегистрироваться</a>
+  </div>
+
+  <footer class="footer">
+    <div class="container footer__bottom">© 2025 TechMaster</div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    let isRegister = false;
+
+    function toggleRegister(e) {
+      e.preventDefault();
+      isRegister = !isRegister;
+      const card = document.getElementById('formCard');
+      if (isRegister) {
+        card.querySelector('h2').textContent = 'Регистрация';
+        card.querySelector('input[type="password"]').insertAdjacentHTML('beforebegin', '<input type="text" id="name" placeholder="Имя">');
+        card.querySelector('.btn').textContent = 'Зарегистрироваться';
+        card.querySelector('.form-card__link').textContent = 'Уже есть аккаунт? Войти';
+      } else {
+        card.querySelector('h2').textContent = 'Вход в личный кабинет';
+        const nameField = document.getElementById('name');
+        if (nameField) nameField.remove();
+        card.querySelector('.btn').textContent = 'Войти';
+        card.querySelector('.form-card__link').textContent = 'Нет аккаунта? Зарегистрироваться';
+      }
+    }
+
+    function login() {
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+      if (!email || !password) return showToast('Заполните все поля');
+      showToast(isRegister ? '✓ Регистрация успешна' : '✓ Вы вошли в систему');
+      setTimeout(() => location.href = 'index.html', 800);
+    }
+  </script>
+</body>
+</html>

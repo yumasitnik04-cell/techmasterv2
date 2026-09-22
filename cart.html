@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Корзина — TechMaster</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container header__inner">
+      <a href="index.html" class="logo">⚡ TechMaster</a>
+      <nav class="nav">
+        <a href="catalog.html">Каталог</a>
+        <a href="pc-builder.html">Сборка ПК</a>
+        <a href="compare.html">Сравнение</a>
+      </nav>
+      <div class="search">
+        <input type="text" id="searchInput" placeholder="Поиск...">
+      </div>
+      <div class="header__actions">
+        <a href="login.html" class="icon-btn">👤</a>
+        <a href="cart.html" class="icon-btn">🛒 <span class="cart-count" id="cartCount">0</span></a>
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+    <h1 style="padding:30px 0 10px; font-size:32px;">🛒 Корзина</h1>
+    <div id="cartContent"></div>
+  </div>
+
+  <footer class="footer">
+    <div class="container footer__bottom">© 2025 TechMaster</div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/cart.js"></script>
+</body>
+</html>
